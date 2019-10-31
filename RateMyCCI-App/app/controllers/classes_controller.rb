@@ -1,5 +1,6 @@
 class ClassesController < ApplicationController
-    def classes
+    def classes #rails renders '/classes/classes' by default
+        
     end
     
 end
