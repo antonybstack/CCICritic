@@ -1,0 +1,94 @@
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>RateMyCCI - Courses</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap/css/review.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <img src="/assets/RateMyCCI.png" width="92.8125" height="70" class="navbar-brand">
+      <a class="navbar-brand" href="#">RateMyCCI</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="classes.html">Classes
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+ 
+      
+    <%= form_for :review, namespace: 'NAMESPACE', url: review_path do |f| %>
+      <div>
+        <%= f.select :desired_attribute, ['Select Professor', 'Marlon Mejias', 'Marion Charles (Chuck) Lane', 'Debarati Basu', 'Julio Cesar Bahamon', 'N. Rich Nguyen'] %>
+        <div>Professor Name</div>
+        <%= f.label :title %><br>
+        <%= f.text_field :title %>
+        <div>Textbook Required?</div>
+        <%= f.check_box :paid %>
+        <div>Presentation(s):</div>
+        <input type="number" name="quantity" min="0">
+        <div># of Test(s):</div>
+        <input type="number" name="quantity" min="0">
+        <div># of Essay(s):</div>
+        <input type="number" name="quantity" min="0">
+      </div>
+     
+      <div>
+        <%= f.label :text %><br>
+        <%= f.text_area :text %>
+      </div>
+      
+      <div> 
+        <%= f.submit %>
+      </div>
+    <% end %>
+
+        
+      <!--<div class="col-lg-12 text-center">-->
+      <!--  <h1 class="mt-5">CCI Courses</h1>-->
+        <!-- <p class="lead">Complete with pre-defined file paths and responsive navigation!</p> -->
+      <!--  <ul class="list-unstyled">-->
+      <!--    <li><a class="nav-link" href="#">ITSC 1212 - Intro to Computer Science I</a></li>-->
+      <!--    <li><a class="nav-link" href="#">ITSC 1213 - Intro to Computer Science II</a></li>-->
+      <!--    <li><a class="nav-link" href="#">ITSC 1600 - Computing Professionals</a></li>-->
+      <!--    <li><a class="nav-link" href="#">ITSC 2214 - Data Structures</a></li>-->
+      <!--    <li><a class="nav-link" href="#">ITSC 3146 - Intro Operating System & Networking</a></li>-->
+      <!--    <li><a class="nav-link" href="#">ITSC 3155 - Software Engineering</a></li>-->
+      <!--  </ul>-->
+      <!--</div>-->
+
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.slim.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+
+
+

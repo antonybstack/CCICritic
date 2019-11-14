@@ -12,6 +12,7 @@ bundle install
 
 # notes
 https://stackoverflow.com/questions/18667326/no-route-matches-get-demo-hello
+https://www.youtube.com/watch?v=hrSg4FMUuLk
 
 
 # running server issue fix
