@@ -10,9 +10,9 @@
 
   <title>RateMyCCI - Login</title>
 
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="vendor/bootstrap/css/login.css" rel="stylesheet">
+  <!-- loads controller specific assets-->
+  <%= stylesheet_link_tag params[:controller] %>
+  <%= javascript_include_tag params[:controller] %>
 
 </head>
 
@@ -28,6 +28,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="review.html">Create Review</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="classes.html">Classes
               <span class="sr-only">(current)</span>
@@ -112,10 +115,6 @@
       </div>
     </div>
   </div> -->
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.slim.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
