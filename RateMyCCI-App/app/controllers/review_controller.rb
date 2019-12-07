@@ -4,5 +4,4 @@ class ReviewController < ApplicationController
   def create #for submit button
     render plain: params[:review].inspect
   end
-  
 end

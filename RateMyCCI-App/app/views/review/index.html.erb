@@ -46,10 +46,10 @@
       
     <%= form_for :review, namespace: 'NAMESPACE', url: review_path do |f| %>
       <div>
-        <%= f.select :desired_attribute, ['Select Professor', 'Marlon Mejias', 'Marion Charles (Chuck) Lane', 'Debarati Basu', 'Julio Cesar Bahamon', 'N. Rich Nguyen'] %>
         <div>Professor Name</div>
-        <%= f.label :title %><br>
-        <%= f.text_field :title %>
+        <%= f.select :desired_attribute, ['Select Professor', 'Marlon Mejias', 'Marion Charles (Chuck) Lane', 'Debarati Basu', 'Julio Cesar Bahamon', 'N. Rich Nguyen'] %>
+        <!--<div>Professor Name</div>-->
+        
         <div>Textbook Required?</div>
         <%= f.check_box :paid %>
         <div>Presentation(s):</div>
@@ -58,6 +58,11 @@
         <input type="number" name="quantity" min="0">
         <div># of Essay(s):</div>
         <input type="number" name="quantity" min="0">
+        <!--Language-->
+        <!--Computer required-->
+        <!--1-5 class review-->
+        <!--1-5 prof review-->
+        <!--1-5 Difficulty rating-->
       </div>
      
       <div>
@@ -68,6 +73,8 @@
       <div> 
         <%= f.submit %>
       </div>
+      
+      
     <% end %>
 
         
