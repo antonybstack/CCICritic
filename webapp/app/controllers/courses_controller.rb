@@ -4,7 +4,7 @@ class CoursesController < ApplicationController
     end
     
     def new #by convention new action is associated with view, points to new view
-        @course = Course.new
+        @course = current_user.Course.new
     end
     
     
