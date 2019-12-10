@@ -52,3 +52,35 @@
     <strong>Text:</strong>
     <%= @course.comment %>
 </p>
+
+<h2>reviews</h2>
+<% @course.reviews.each do |review| %>
+  <p>
+    <strong>reviewer:</strong>
+    <%= review.reviewer %>
+  </p>
+ 
+  <p>
+    <strong>review:</strong>
+    <%= review.body %>
+  </p>
+<% end %>
+
+<h2>Add a review:</h2>
+<%= form_for([@course, @course.reviews.build]) do |f| %>
+  <p>
+    <%= f.label :essays %><br>
+    <%= f.text_area :essays %>
+  </p>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
+
+
+<%= link_to 'Courses', courses_path %>
