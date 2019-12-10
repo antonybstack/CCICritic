@@ -10,7 +10,7 @@
  
   <% @courses.each do |course| %>
     <tr>
-      <td><%= course.professor_name %></td>
+      <td><%= course.course_name %></td>
       <td><%= link_to 'Show', course_path(course) %></td>
     </tr>
   <% end %>

@@ -1,27 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  professor_name: MyString
-  overall_rating: 1
-  professor_rating: 1
-  difficulty_rating: 1
-  language: MyString
-  textbook_req: false
-  computer_req: false
-  presentations: 1
-  tests: 1
-  essays: 1
-  comment: MyText
+  course_name: MyString
 
 two:
-  professor_name: MyString
-  overall_rating: 1
-  professor_rating: 1
-  difficulty_rating: 1
-  language: MyString
-  textbook_req: false
-  computer_req: false
-  presentations: 1
-  tests: 1
-  essays: 1
-  comment: MyText
+  course_name: MyString
