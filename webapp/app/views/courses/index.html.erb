@@ -1,18 +1,43 @@
-<%= link_to "Home", root_path %>
-<h1>CCI Courses</h1>
- 
- <%= link_to 'Add a new course' , new_course_path %>
- 
-<table>
-  <tr>
-    <th>Course Name</th>
-    <th></th>
-  </tr>
- 
-  <% @courses.each do |course| %>
-    <tr>
-      <td><%= course.course_name %></td>
-      <td><%= link_to 'Show', course_path(course) %></td>
-    </tr>
-  <% end %>
-</table>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>RateMyCCI - Courses</title>
+
+  <!-- loads controller specific assets-->
+  <%= stylesheet_link_tag params[:controller] %>
+  <%= javascript_include_tag params[:controller] %>
+</head>
+
+<body>
+
+<!-- Page Content -->
+  <div class="container-classes">
+
+      <div class="col-lg-12 text-center">
+        <h1 class="mt-5">CCI Courses</h1>
+        <!-- <p class="lead">Complete with pre-defined file paths and responsive navigation!</p> -->
+         
+          <ul class="navbar-nav ml-auto">
+          <% @courses.each do |course| %>
+            <li class="courses">
+              <%= link_to course.course_name, course_path(course) %>
+            </li>
+          <% end %>
+          
+      
+  <li id="course-add">
+  <%= link_to 'Add a new course' , new_course_path %><br>
+  </li>
+  </ul>
+  </div>
+  </div>
+
+</body>
+</html>

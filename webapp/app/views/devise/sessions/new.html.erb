@@ -1,26 +1,44 @@
-<h2>Log in</h2>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <%= stylesheet_link_tag "login" %>
+</head>
+
+<body>
+<div class="login-container">
+  
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
+<h2>Log in</h2>
+  <div class="group-login">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
-  <div class="field">
+  <div class="group-login">
     <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
-
+<div class="group-login">
   <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
+    
       <%= f.label :remember_me %>
-    </div>
-  <% end %>
+      <%= f.check_box :remember_me %>
 
+    
+  <% end %>
+</div>
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", {:class=>"example_b"}%>
   </div>
+  <p>Don't have an account? <%= render "devise/shared/links" %></p>
+
 <% end %>
 
-<%= render "devise/shared/links" %>
+</div>
+</body>

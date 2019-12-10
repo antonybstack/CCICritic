@@ -17,3 +17,9 @@
 
 
 /*this was removed --> '*= require_tree' because it was combining all style sheets into one
+
+/**/
+body{
+  background-image: url("background.jpg");
+}
+

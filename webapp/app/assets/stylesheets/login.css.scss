@@ -1,7 +1,3 @@
-// Place all the styles related to the Courses controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 .login-container {
   display: flex;
   justify-content: center;
@@ -16,7 +12,9 @@
 
 /* basic stylings ------------------------------------------ */
 
-
+body{
+  background-image: url("background.jpg");
+}
 
 
 
@@ -24,6 +22,8 @@
 .group-login 			  {
   position:relative;
   margin-bottom:45px;
+  padding-top: 20px;
+  color:black;
 }
 input 				{
   font-size:18px;
@@ -37,7 +37,7 @@ input:focus 		{ outline:none; }
 
 /* LABEL ======================================= */
 label 				 {
-  color:#999;
+  color:black;
   font-size:18px;
   font-weight:normal;
   position:absolute;
@@ -137,18 +137,18 @@ text-decoration: none;
 }
 
 
-.container-classes {
-  background: #ffffff;
-  padding: 1em 2em 0em 2em;
-  max-width: 500px;
+form {
+  background: #fff;
+  padding: 4em 2em 1em 2em;
+  max-width: 400px;
   margin: 50px auto 0;
   box-shadow: 0 0 2em #B2B2B2;
-  border-radius: 5px;
+  border-radius: 40px;
 }
 
 h1{
 
-  padding-bottom: 50px;
+  padding-bottom: 20px;
 }
 
 p{
@@ -156,14 +156,6 @@ p{
   text-align: center;
 }
 
-.courses a{
-  float:left;
-  margin-left: 30px;
-  padding-top: 20px;
-}
-
-#course-add {
-  padding-top: 11em;
-  padding-bottom: 30px;
-  float: bottom;
+#forgotpass{
+  color: #63AEF6;
 }

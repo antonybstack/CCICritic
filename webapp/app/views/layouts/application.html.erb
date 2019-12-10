@@ -1,25 +1,69 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Webapp</title>
+    <title>RateMyCCI</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <!-- Bootstrap core CSS -->
+    <%= stylesheet_link_tag "bootstrap.min.css" %> 
+    <%= stylesheet_link_tag "bootstrap.css" %> 
+    
+    <!-- Bootstrap core JavaScript -->
+    <%= javascript_include_tag 'jquery.slim.min.js' %>
+    <%= javascript_include_tag 'bootstrap.bundle.min.js' %>
+    <%= javascript_include_tag 'bootstrap.bundle.js' %>
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <% if user_signed_in? == false %>
-      
-      <%= link_to "Sign In", new_user_session_path %>
-      <%= link_to "Sign Up", new_user_registration_path %><br>
-    <% else %> 
-      Welcome <strong><%= current_user.email %></strong>! &nbsp
-      <%= link_to('Logout', destroy_user_session_path, method: :delete) %><br>        
-    <% end %>
+    <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a href="/"><img src="/assets/RateMyCCI.png" width="92.8125" height="70" class="navbar-brand"></a>
+      <a class="navbar-brand" href="/">RateMyCCI</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <%= link_to "Home", root_path, {:class=>"nav-link"}%>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Courses', courses_path, {:class=>"nav-link"} %>
+              
+            </a>
+          </li>
+          
+            <% if user_signed_in? == false %>
+                <li class="nav-item">
+                  <%= link_to "Sign In", new_user_session_path, {:class=>"nav-link"} %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "Sign Up", new_user_registration_path, {:class=>"nav-link"} %>
+                </li>
+            <% else %> 
+                <li class="nav-item">
+                  
+                  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class=>"nav-link" %>
+                </li>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <% if user_signed_in? == true %>
+  Welcome <strong><%= current_user.email %></strong>! &nbsp
+  <% end %>
+  
+    <span class="notice"><%= notice %></span>
+    <span class="alert"><%= alert %></span>
+    
     <%= yield %>
 
   </body>
