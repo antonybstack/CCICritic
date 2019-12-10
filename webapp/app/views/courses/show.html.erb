@@ -55,15 +55,40 @@
 
 <h2>reviews</h2>
 <% @course.reviews.each do |review| %>
-  <p>
-    <strong>reviewer:</strong>
-    <%= review.reviewer %>
-  </p>
- 
-  <p>
-    <strong>review:</strong>
-    <%= review.body %>
-  </p>
+<p>
+    <strong>Professor:</strong>
+    <%= review.professor_name %><br>
+
+    <strong>Overall Rating:</strong>
+    <%= review.overall_rating %><br>
+
+    <strong>Professor Rating:</strong>
+    <%= review.professor_rating %><br>
+
+    <strong>Difficulty Rating:</strong>
+    <%= review.difficulty_rating %><br>
+
+    <strong>Programming Language:</strong>
+    <%= review.language %><br>
+
+    <strong>Textbook Required?:</strong>
+    <%= review.textbook_req %><br>
+
+    <strong>Laptop Required?</strong>
+    <%= review.computer_req %><br>
+
+    <strong># of Presentations:</strong>
+    <%= review.presentations %><br>
+
+    <strong># of Tests:</strong>
+    <%= review.tests %><br>
+
+    <strong># of Essays:</strong>
+    <%= review.essays %><br>
+    
+    <strong>Comment:</strong>
+    <%= review.comment %><br>
+</p>
 <% end %>
 
 <h2>Add a review:</h2>
