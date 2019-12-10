@@ -68,18 +68,40 @@
 
 <h2>Add a review:</h2>
 <%= form_for([@course, @course.reviews.build]) do |f| %>
-  <p>
-    <%= f.label :essays %><br>
-    <%= f.text_area :essays %>
-  </p>
-  <p>
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </p>
-  <p>
+  <%= f.label :professor_name, "What is your professor's name?" %>
+    <%= f.select :professor_name, ['Select Professor', 'Marlon Mejias', 'Marion Charles (Chuck) Lane', 'Debarati Basu', 'Julio Cesar Bahamon', 'N. Rich Nguyen'] %><br>
+    <!--1-5 overall course rating-->
+    <%= f.label :overall_rating, "What is your overall rating of the class?" %>
+    <%= f.select :overall_rating, [1,2,3,4,5,6,7,8,9,10] %><br>
+    <!--1-5 prof review-->
+    <%= f.label :professor_rating, "" %>
+    <%= f.select :professor_rating, [1,2,3,4,5,6,7,8,9,10] %><br>
+    <!--1-5 difficulty rating-->
+    <%= f.label :difficulty_rating, "" %>
+    <%= f.select :difficulty_rating, [1,2,3,4,5,6,7,8,9,10] %><br>
+    <!--programming language?-->
+    <%= f.label :language, "What was the programming language?" %>
+    <%= f.select :language, ['N/A', 'c++', 'c#', 'MySQL', 'python'] %><br>
+    <!--Textbook required?-->
+    <%= f.label :textbook_req, "Is the textbook required? Check for yes." %>
+    <%= f.check_box :textbook_req %><br>
+    <!--is computer required?-->
+    <%= f.label :computer_req, "Is a computer required to bring to class?" %>
+    <%= f.check_box :computer_req %><br>
+    <!--# of presentations?-->
+    <%= f.label :presentations, "How many presentations?" %>
+    <%= f.text_field :presentations %><br>
+    <!--# of tests?-->
+    <%= f.label :tests, "How many tests?" %>
+    <%= f.text_field :tests %><br>
+    <!--# of essays?-->
+    <%= f.label :essays, "How many essays?" %>
+    <%= f.text_field :essays %><br>
+    <!--student overall comment about the class-->
+    <%= f.label :comment, "Please leave any helpful details about the class:" %><br>
+    <%= f.text_area :comment %><br>
+    <!--submit course data-->
     <%= f.submit %>
-  </p>
-
 <% end %>
 
 
