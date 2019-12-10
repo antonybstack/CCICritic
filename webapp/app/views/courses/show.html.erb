@@ -1,11 +1,11 @@
-<p>
-    <strong>Title:</strong>
+<%= link_to "Home", root_path %>
+<h1>
     <%= @course.course_name %>
-</p>
+</h1>
 
 
 
-<h2>reviews</h2>
+<h2>Student Reviews</h2>
 <% @course.reviews.each do |review| %>
 <p>
     <strong>Professor:</strong>
@@ -43,7 +43,7 @@
 </p>
 <% end %>
 
-<h2>Add a review:</h2>
+<h3>Add a review:</h3>
 <%= form_for([@course, @course.reviews.build]) do |f| %>
   <%= f.label :professor_name, "What is your professor's name?" %>
     <%= f.select :professor_name, ['Select Professor', 'Marlon Mejias', 'Marion Charles (Chuck) Lane', 'Debarati Basu', 'Julio Cesar Bahamon', 'N. Rich Nguyen'] %><br>
@@ -82,4 +82,4 @@
 <% end %>
 
 
-<%= link_to 'Courses', courses_path %>
+<%= link_to 'Back to Courses', courses_path %>

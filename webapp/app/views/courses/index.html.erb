@@ -1,11 +1,12 @@
-<h1>Listing courses</h1>
+<%= link_to "Home", root_path %>
+<h1>CCI Courses</h1>
  
- <%= link_to 'New course' , new_course_path %>
+ <%= link_to 'Add a new course' , new_course_path %>
  
 <table>
   <tr>
-    <th>Title</th>
-    <th>Text</th>
+    <th>Course Name</th>
+    <th></th>
   </tr>
  
   <% @courses.each do |course| %>
