@@ -1,4 +1,38 @@
-<%= link_to "Home", root_path %>
+<!DOCTYPE html>
+<html lang="en">
 
-<h1>RateMyCCI.com</h1>
-<%= link_to 'Courses', controller: 'courses' %>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>RateMyCCI - Courses</title>
+
+  <!-- loads controller specific assets-->
+  <%= stylesheet_link_tag params[:controller] %>
+  <%= javascript_include_tag params[:controller] %>
+</head>
+
+<body>
+
+<!-- Page Content -->
+  <div class="container-classes">
+        <h1>RateMyCCI</h1>
+        <p>Check out the <%= link_to 'courses', controller: 'courses' %> people have reviewed!</p>
+        <p>Github: <a href="https://github.com/antonybstack/RateMyCCI">https://github.com/antonybstack/RateMyCCI</a> </a></p>
+        <p>Software Engineering ITSC-3155-102</p>
+        <ul id="testy">Team Members:
+            <li>Micah Langford - mlangfo1@uncc.edu</li>
+            <li>Antony Blyakher - ablyakhe@uncc.edu</li>
+            <li>Delaney Mizell - dmizell1@uncc.edu</li>
+        </ul>
+        <p>Summary: Webapp that aggregates ratings and reviews of CCI classes for CCI students</p>
+        <p>This project idea’s goal is to impact the CCI students and facualty at UNCC in a postive way</p>
+        <p></p>
+</p>
+  </div>
+
+</body>
+</html>

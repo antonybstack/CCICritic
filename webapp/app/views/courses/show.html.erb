@@ -1,63 +1,90 @@
-<%= link_to "Home", root_path %><br>
-<%= link_to 'Back to Courses', courses_path %>
-<h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>RateMyCCI - Courses</title>
+
+  <!-- loads controller specific assets-->
+  
+  <%= stylesheet_link_tag "reviews" %>
+  
+</head>
+
+<body>
+
+<!-- Page Content -->
+
+  <div class="container-classes">
+    <h1>
     <%= @course.course_name %>
-</h1>
+    </h1>
+        <h1 id="title2">Student Reviews</h1>
+        <!-- <p class="lead">Complete with pre-defined file paths and responsive navigation!</p> -->
+         
+          <ul class="navbar-nav ml-auto">
+          <% @course.reviews.each do |review| %>
+            <div class="review-block">
+              <table style="height: 163px; width: 779px;">
+<tbody>
+<tr style="height: 36px;">
+  <p><strong>Professor Name:&nbsp;</strong><%= review.professor_name %></p>
 
-
-
-
-<h2>Student Reviews</h2>
-<% @course.reviews.each do |review| %>
-<p>
-    <strong>Professor:</strong>
-    <%= review.professor_name %><br>
-
-    <strong>Overall Rating:</strong>
-    <%= review.overall_rating %><br>
-
-    <strong>Professor Rating:</strong>
-    <%= review.professor_rating %><br>
-
-    <strong>Difficulty Rating:</strong>
-    <%= review.difficulty_rating %><br>
-
-    <strong>Programming Language:</strong>
-    <%= review.language %><br>
-
-    <strong>Textbook Required?:</strong>
-    <%= review.textbook_req %><br>
-
-    <strong>Laptop Required?</strong>
-    <%= review.computer_req %><br>
-
-    <strong># of Presentations:</strong>
-    <%= review.presentations %><br>
-
-    <strong># of Tests:</strong>
-    <%= review.tests %><br>
-
-    <strong># of Essays:</strong>
-    <%= review.essays %><br>
-    
-    <strong>Comment:</strong>
-    <%= review.comment %><br>
-</p>
+<td style="width: 354px; text-align: right; height: 36px;"><strong>Overall Rating:</strong></td>
+<td class="overall" style="width: 88px; height: 36px; text-align: center;"><%= review.overall_rating %></td>
+<td style="width: 634px; text-align: right; height: 36px;"><strong>Programming Language:</strong></td>
+<td style="width: 342px; height: 36px; text-align: center;"><%= review.language %></td>
+<td style="width: 311px; height: 36px; text-align: right;"><strong># of Presentations:</strong></td>
+<td style="width: 345px; height: 36px; text-align: center;"><%= review.presentations %></td>
+</tr>
+<tr style="height: 36px;">
+<td style="width: 354px; text-align: right; height: 36px;"><strong>Professor Rating:</strong></td>
+<td style="width: 88px; height: 36px; text-align: center;"><%= review.professor_rating %></td>
+<td style="width: 634px; text-align: right; height: 36px;"><strong>Textbook Required?:</strong></td>
+<td style="width: 342px; height: 36px; text-align: center;"><%= review.textbook_req %></td>
+<td style="width: 311px; height: 36px; text-align: right;"><strong># of Tests:</strong></td>
+<td style="width: 345px; height: 36px; text-align: center;"><%= review.tests %></td>
+</tr>
+<tr style="height: 36px;">
+<td style="width: 354px; text-align: right; height: 36px;"><strong>Difficulty Rating:</strong></td>
+<td style="width: 88px; height: 36px; text-align: center;"><%= review.difficulty_rating %></td>
+<td style="width: 634px; text-align: right; height: 36px;"><strong>Laptop Required?</strong></td>
+<td style="width: 342px; height: 36px; text-align: center;"><%= review.computer_req %></td>
+<td style="width: 311px; height: 36px; text-align: right;"><strong># of Essays:</strong></td>
+<td style="width: 345px; height: 36px; text-align: center;"><%= review.essays %></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 166px; text-align: right; height: 91px;"><strong>Comment:</strong></td>
+<td style="width: 88px; height: 91px;">&nbsp;</td>
+<td style="width: 634px; height: 91px;"><%= review.comment %></td>
+<td style="width: 342px; height: 18px;">&nbsp;</td>
+<td style="width: 311px; height: 18px;">&nbsp;</td>
+<td style="width: 345px; height: 18px;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
 <% end %>
-
-<h3>Add a review:</h3>
+          
+      <div class="reviewform">
+  <h3>Add a review:</h3>
 <%= form_for([@course, @course.reviews.build]) do |f| %>
-  <%= f.label :professor_name, "What is your professor's name?" %>
-    <%= f.select :professor_name, ['Select Professor', 'Marlon Mejias', 'Marion Charles (Chuck) Lane', 'Debarati Basu', 'Julio Cesar Bahamon', 'N. Rich Nguyen'] %><br>
+    <%= f.label :professor_name, "What is your professor's name?" %>
+    <%= f.select :professor_name, ['Select Professor', 'Alberto Gonzalez', 'Cara Alberto Jokell', 'Charles Chuck Lane', 'Dale-Marie Cretia Anne Wilson', 'Daniel Joseph Jugan', 'Debarati Basu', 'Julio Cesar Bahamon', 'Lijuan Cao', 'Lorrie J Lehmann', 'Marlon Mejias', 'N. Rich Nguyen', 'Nadia Abusaymeh Najjar', 'Norman Bruce Long', 'Sara Houser Scott'] %><br>
     <!--1-5 overall course rating-->
     <%= f.label :overall_rating, "What is your overall rating of the class?" %>
-    <%= f.select :overall_rating, [1,2,3,4,5,6,7,8,9,10] %><br>
+    <%= f.select :overall_rating, [10,9,8,7,6,5,4,3,2,1] %><br>
     <!--1-5 prof review-->
     <%= f.label :professor_rating, "" %>
-    <%= f.select :professor_rating, [1,2,3,4,5,6,7,8,9,10] %><br>
+    <%= f.select :professor_rating, [10,9,8,7,6,5,4,3,2,1] %><br>
     <!--1-5 difficulty rating-->
     <%= f.label :difficulty_rating, "" %>
-    <%= f.select :difficulty_rating, [1,2,3,4,5,6,7,8,9,10] %><br>
+    <%= f.select :difficulty_rating, [10,9,8,7,6,5,4,3,2,1] %><br>
     <!--programming language?-->
     <%= f.label :language, "What was the programming language?" %>
     <%= f.select :language, ['N/A', 'c++', 'c#', 'MySQL', 'python'] %><br>
@@ -82,5 +109,37 @@
     <!--submit course data-->
     <%= f.submit %>
 <% end %>
+</div>
+    </div>
+    
+  </div>
+
+</body>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+// self executing function here
+
+$(document).ready(function(){
+    var x = document.getElementsByClassName("overall");
+    console.log(x[0].innerHTML);
+    var numReviews = $('.review-block').length
+    console.log(numReviews);
+    
+    for (i = 0; i < numReviews; i++) {
+      if(x[i].innerHTML > 5){
+          $(`.review-block:eq(`+i+`)`).css("background-color", "#C2E9CF");
+      }
+      else{
+          $(`.review-block:eq(`+i+`)`).css("background-color", "#ECD2D7");
+      }
+    }
+    
+    
+
+}); //end ready
+
+</script>
 
 
