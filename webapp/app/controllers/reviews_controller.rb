@@ -1,3 +1,19 @@
+#Cucumber Test:  4 - The user has the ability to leave a review. 
+
+#@when “The user has a valid account and is logged in ”
+#@when “user selects the professor’s name “Marlon Mejias.”
+#@when “user selects course rating of 9”
+#@when “user selects overall rating of 9”
+#@when “user selects programming language of “Ruby” ”
+#@when “user does not select Textbook required”
+#@when “user selects is computer required”
+#@when “user sets “How many presentations” as “1””
+#@when “user sets  “# of tests?” as “2””
+#@when “user sets  “# of essays?” as “0””
+#@when “user sets “student overall comment about the class “ “No additional Comments””
+#@then “a valid review highlighted in green is created”
+
+
 class ReviewsController < ApplicationController
     # before_action :authenticate_user!, except: [:index, :show]
     
