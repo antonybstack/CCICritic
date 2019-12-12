@@ -1,0 +1,29 @@
+
+Cucumber Test:  1 - The user has the ability to create an account
+@when “User enters email “ThisIsATest@uncc.edu”.”
+@when “User enters password “Testing123!”.”
+@then “The user has created a valid account.”
+
+Cucumber Test:  2 - The user has the ability to log in
+@when “The user has a valid account.”
+@when “User enters email “ThisIsATest@uncc.edu”.”
+@when “User enters password “Testing123!”.”
+@then “The user has logged into a valid account a valid account.”
+
+Cucumber Test:  3-  The user has the ability to request password when lost
+@when  “The user has input “ThisIsATest@uncc.edu” in the email box.”
+@then “The user will receive an email with their proper password.”
+             
+Cucumber Test:  4 - The user has the ability to leave a review. 
+@when “The user has a valid account and is logged in ”
+@when “user selects the professor’s name “Marlon Mejias.”
+@when “user selects course rating of 9”
+@when “user selects overall rating of 9”
+@when “user selects programming language of “Ruby” ”
+@when “user does not select Textbook required”
+@when “user selects is computer required”
+@when “user sets “How many presentations” as “1””
+@when “user sets  “# of tests?” as “2””
+@when “user sets  “# of essays?” as “0””
+@when “user sets “student overall comment about the class “ “No additional Comments””
+@then “a valid review, highlighted in green, is created”
