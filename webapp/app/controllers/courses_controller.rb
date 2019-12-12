@@ -1,3 +1,19 @@
+#Cucumber Test:  1 - The user has the ability to create an account
+
+#@when “User enters email “ThisIsATest@uncc.edu”.”
+#@when “User enters password “Testing123!”.”
+#@then “The user has created a valid account.”
+
+#Cucumber Test:  2 - The user has the ability to log in
+
+#@when “The user has a valid account.”
+#@when “User enters email “ThisIsATest@uncc.edu”.”
+#@when “User enters password “Testing123!”.”
+#@then “The user has logged into a valid account a valid account.”
+
+
+
+
 class CoursesController < ApplicationController
     def index
         @courses = Course.all
